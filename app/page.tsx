@@ -60,36 +60,16 @@ export default function Portfolio() {
   ];
 
   const certifications = [
-    {
-      title:
-        "Mastery in Data Science and Data Analytics with AI – NSDC And ItVedant Education 2025",
-      link:
-        "https://drive.google.com/file/d/14AhanCTNcQ9cBPIw4WoDxdr5rVWbIOo1/view",
-    },
-    {
-      title:
-        "Machine Learning with Python – IBM 2025",
-      link:
-        "https://drive.google.com/file/d/1NWTakA3MD6PXj3MKWsSnnp1H3LzjuF_V/view",
-    },
-    {
-      title:
-        "Data Science and Data Analytics with Python – IBM 2025",
-      link:
-        "https://drive.google.com/file/d/1Hr1UcEgGrwkmj-gCrAqTOqgkJVDuhpnG/view",
-    },
-    {
-      title:
-        "Amazon Web Services (AWS) – ItVedant Education 2025",
-      link:
-        "https://drive.google.com/file/d/1nO_aac4PYystCW1V99eR-7tEt1LfEpNg/view",
-    },
-    {
-      title:
-        "Fundamentals of DevOps – ItVedant Education 2025",
-      link:
-        "https://drive.google.com/file/d/1COd7kK8uc7q_FbeaDZbMPeVYf2PDtu4F/view",
-    },
+    { 
+      title: "Mastery in Data Science and Data Analytics with AI – NSDC And ItVedant Education 2025", 
+      link: "https://drive.google.com/file/d/14AhanCTNcQ9cBPIw4WoDxdr5rVWbIOo1/view", }, 
+      { title: "Machine Learning with Python – IBM 2025", link: "https://drive.google.com/file/d/1NWTakA3MD6PXj3MKWsSnnp1H3LzjuF_V/view", },
+      { title: "Data Science and Data Analytics with Python – IBM 2025", link: "https://drive.google.com/file/d/1Hr1UcEgGrwkmj-gCrAqTOqgkJVDuhpnG/view", }, 
+      { title: "Amazon Web Services (AWS) – ItVedant Education 2025", link: "https://drive.google.com/file/d/1nO_aac4PYystCW1V99eR-7tEt1LfEpNg/view", }, 
+      { title: "Fundamentals of DevOps – ItVedant Education 2025", link: "https://drive.google.com/file/d/1COd7kK8uc7q_FbeaDZbMPeVYf2PDtu4F/view", 
+
+      },
+    
   ];
 
   return (
@@ -138,11 +118,9 @@ export default function Portfolio() {
             </h1>
 
             <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl">
-              Final-year Artificial Intelligence and Data Science undergraduate with strong foundation in software engineering, machine
-              learning, and data-driven systems. Experienced in building AI-powered applications, APIs, and analytics solutions using
-              Python and modern frameworks. Familiar with Generative AI tools, prompt engineering, cloud platforms, DevOps
-              fundamentals, and Agile workflows. Passionate about building scalable AI-augmented software systems and seeking a
-              Trainee Software Engineer role to contribute to innovative product development
+              Final-year Artificial Intelligence and Data Science undergraduate
+              with strong foundation in software engineering, machine learning,
+              and data-driven systems.
             </p>
 
             <div className="flex gap-5 flex-wrap">
@@ -197,107 +175,234 @@ export default function Portfolio() {
 
       {/* ABOUT */}
       <section className="py-28 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto">
 
-          <motion.img
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            src="/profile.jpg"
-            className="rounded-[35px]"
-          />
+          <div className="grid md:grid-cols-2 gap-16 items-center">
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-          >
+            <motion.img
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              src="/profile.jpg"
+              className="rounded-[35px] border border-white/10"
+            />
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="text-red-500 uppercase tracking-[4px] mb-4">
+                About Me
+              </p>
+
+              <h2 className="text-5xl font-bold mb-8">
+                AI Engineer & <br />
+                Generative AI Developer
+              </h2>
+
+              <p className="text-gray-400 leading-relaxed text-lg mb-8">
+                Passionate about AI automation, intelligent systems,
+                NLP, computer vision, and emerging AI technologies.
+              </p>
+
+              <div className="glass rounded-[30px] p-8 mb-8">
+                <h3 className="text-2xl font-bold mb-5 text-white">
+                  Professional Summary
+                </h3>
+
+                <p className="text-gray-400 leading-relaxed mb-6">
+                  Artificial Intelligence & Data Science student at
+                  Savitribai Phule Pune University with expertise in
+                  Machine Learning, Data Analytics, Generative AI,
+                  LangChain, LLMs, Prompt Engineering, and AI Agents.
+                </p>
+
+                <div className="space-y-4 text-gray-300">
+                  <p>
+                    • NSDC Certified Master in Data Science & Data Analysis
+                  </p>
+
+                  <p>
+                    • ITVedant Certified Master in Data Science & Analytics with AI
+                  </p>
+
+                  <p>
+                    • IBM Data Analysis with Python
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+                <div className="glass p-6 rounded-2xl">
+                  <h3 className="text-3xl font-bold text-red-500">
+                    88%
+                  </h3>
+
+                  <p className="text-gray-400 mt-2">
+                    SSC Board
+                  </p>
+                </div>
+
+                <div className="glass p-6 rounded-2xl">
+                  <h3 className="text-3xl font-bold text-red-500">
+                    78.83%
+                  </h3>
+
+                  <p className="text-gray-400 mt-2">
+                    HSC Board
+                  </p>
+                </div>
+
+                <div className="glass p-6 rounded-2xl">
+                  <h3 className="text-3xl font-bold text-red-500">
+                    8.85
+                  </h3>
+
+                  <p className="text-gray-400 mt-2">
+                    CGPA
+                  </p>
+                </div>
+
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* SKILLS */}
+      <section className="py-28 px-6">
+        <div className="max-w-7xl mx-auto">
+
+          <div className="mb-20 text-center">
             <p className="text-red-500 uppercase tracking-[4px] mb-4">
-              About Me
+              Skills & Expertise
             </p>
 
-            <h2 className="text-5xl font-bold mb-8">
-              AI Engineer & <br />
-              Generative AI Developer
+            <h2 className="text-5xl font-bold">
+              Technical Skills
             </h2>
+          </div>
 
-            <p className="text-gray-400 leading-relaxed text-lg mb-8">
-              Artificial Intelligence & Data Science student at
-              Savitribai Phule Pune University with expertise in
-              Machine Learning, NLP, Computer Vision, LangChain,
-              LLMs, AI Agents, and Data Analytics.
-            </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <div className="grid grid-cols-2 gap-6">
-              <div className="glass p-6 rounded-2xl">
-                <h3 className="text-4xl font-bold text-red-500">
-                  8.85
+            {[
+              {
+                title: "Programming",
+                skills: ["Python", "SQL"],
+                icon: <FaPython />,
+              },
+              {
+                title: "AI & ML",
+                skills: ["Scikit-learn", "YOLO", "NLP", "RAG"],
+              },
+              {
+                title: "Generative AI",
+                skills: ["LangChain", "OpenAI", "ChatGPT", "LLMs"],
+              },
+              {
+                title: "Backend",
+                skills: ["FastAPI", "Flask", "Streamlit"],
+              },
+              {
+                title: "Data Analytics",
+                skills: ["Pandas", "NumPy", "Power BI", "Tableau"],
+                icon: <FaDatabase />,
+              },
+              {
+                title: "Tools",
+                skills: ["Git", "GitHub", "Docker", "Jira"],
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ y: -10 }}
+                className="glass p-8 rounded-[30px]"
+              >
+                <div className="text-red-500 text-4xl mb-6">
+                  {item.icon}
+                </div>
+
+                <h3 className="text-2xl font-bold mb-6">
+                  {item.title}
                 </h3>
-                <p className="text-gray-400 mt-2">
-                  CGPA
-                </p>
-              </div>
 
-              <div className="glass p-6 rounded-2xl">
-                <h3 className="text-4xl font-bold text-red-500">
-                  15+
-                </h3>
-                <p className="text-gray-400 mt-2">
-                  Technical Skills
-                </p>
-              </div>
-            </div>
-          </motion.div>
+                <div className="flex flex-wrap gap-3">
+                  {item.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-full text-sm"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+
+          </div>
         </div>
       </section>
 
       {/* EXPERIENCE */}
       <section className="py-28 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
+        <div className="max-w-7xl mx-auto">
+
+          <div className="mb-20 text-center">
             <p className="text-red-500 uppercase tracking-[4px] mb-4">
               Experience
             </p>
 
             <h2 className="text-5xl font-bold">
-              Work Experience
+              Professional Experience
             </h2>
           </div>
 
-          <div className="glass rounded-[30px] p-10">
-            <p className="text-red-500 mb-3">
-              Sept 2025 – Dec 2025
-            </p>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
 
-            <h3 className="text-3xl font-bold mb-3">
-              Data Analyst Intern
-            </h3>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+            >
+              <img
+                src="/images/dashboard.jpg"
+                alt="dashboard"
+                className="rounded-[30px] border border-white/10"
+              />
+            </motion.div>
 
-            <p className="text-gray-400 mb-6">
-              Inorbvict Healthcare Pvt. Ltd., Pune
-            </p>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="glass rounded-[30px] p-10"
+            >
+              <p className="text-red-500 mb-4">
+                Sept 2025 – Dec 2025
+              </p>
 
-            <ul className="space-y-4 text-gray-300">
-              <li>
-                • Built interactive BI dashboards using Zoho Analytics
-              </li>
-              <li>
-                • Created employee productivity dashboards
-              </li>
-              <li>
-                • Developed Jira sprint tracking dashboards
-              </li>
-              <li>
-                • Built Git analytics dashboards for monitoring
-              </li>
-            </ul>
+              <h3 className="text-4xl font-bold mb-4">
+                Data Analyst Intern
+              </h3>
+
+              <p className="text-gray-400 mb-8">
+                Inorbvict Healthcare Pvt. Ltd., Pune
+              </p>
+
+              <div className="space-y-5 text-gray-300">
+                <p>• Built interactive BI dashboards using Power BI</p>
+                <p>• Created employee productivity dashboards</p>
+                <p>• Developed Jira sprint monitoring dashboards</p>
+                <p>• Conducted Zoho Projects training sessions</p>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
 
       {/* PROJECTS */}
-      <section
-        id="projects"
-        className="py-28 px-6"
-      >
+      <section id="projects" className="py-28 px-6">
         <div className="max-w-7xl mx-auto">
 
           <div className="mb-20 text-center">
@@ -341,6 +446,7 @@ export default function Portfolio() {
                   <a
                     href={project.github}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-block border border-red-500 px-6 py-3 rounded-xl hover:bg-red-500/20 transition"
                   >
                     View GitHub
@@ -370,41 +476,23 @@ export default function Portfolio() {
             {certifications.map((cert, index) => (
               <motion.div
                 key={index}
-                whileHover={{
-                  y: -10,
-                  scale: 1.02,
-                }}
-                className="glass p-8 rounded-[30px] border border-white/10 hover:border-red-500/40 transition duration-500 relative overflow-hidden group"
+                whileHover={{ y: -10 }}
+                className="glass p-8 rounded-[30px]"
               >
+                <div className="text-5xl mb-6">🏆</div>
 
-                <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 blur-3xl rounded-full"></div>
+                <h3 className="text-xl font-semibold mb-8 leading-relaxed">
+                  {cert.title}
+                </h3>
 
-                <div className="relative z-10">
-
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="text-5xl">
-                      🏆
-                    </div>
-
-                    <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 text-xl group-hover:bg-red-500 group-hover:text-white transition">
-                      ↗
-                    </div>
-                  </div>
-
-                  <h3 className="text-xl font-semibold leading-relaxed mb-8 min-h-[140px]">
-                    {cert.title}
-                  </h3>
-
-                  <a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 border border-red-500 px-5 py-3 rounded-xl hover:bg-red-500/20 transition"
-                  >
-                    View Certificate
-                  </a>
-
-                </div>
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block border border-red-500 px-5 py-3 rounded-xl hover:bg-red-500/20 transition"
+                >
+                  View Certificate
+                </a>
               </motion.div>
             ))}
           </div>
@@ -486,9 +574,7 @@ export default function Portfolio() {
           </a>
         </div>
 
-        <p>
-          Built with AI & Innovation
-        </p>
+        <p>Built with AI & Innovation</p>
       </footer>
     </div>
   );
