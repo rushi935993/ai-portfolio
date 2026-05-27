@@ -2,6 +2,13 @@
 
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
+import { motion } from "framer-motion";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaPython,
+  FaDatabase,
+} from "react-icons/fa";
 
 export default function Portfolio() {
   const form = useRef<HTMLFormElement>(null);
@@ -18,226 +25,270 @@ export default function Portfolio() {
         form.current,
         "JXEAmhuyz1t-OkoA-"
       )
-      .then(
-        () => {
-          alert("Message sent successfully!");
-        },
-        (error) => {
-          alert("Failed to send message.");
-          console.log(error.text);
-        }
-      );
-  };
-
-  const skills = {
-    Programming: ["Python", "SQL"],
-    "AI & ML": [
-      "Scikit-learn",
-      "YOLO",
-      "NLP",
-      "RAG",
-      "Model Evaluation",
-    ],
-    "Generative AI": [
-      "LangChain",
-      "OpenAI",
-      "ChatGPT",
-      "Prompt Engineering",
-      "LLMs",
-    ],
-    Backend: ["FastAPI", "Flask", "Streamlit"],
-    "Data Analytics": [
-      "Pandas",
-      "NumPy",
-      "Power BI",
-      "Tableau",
-      "Excel",
-    ],
-    Databases: ["MySQL", "MongoDB"],
-    Tools: ["Git", "GitHub", "Docker", "Jira", "AWS"],
+      .then(() => {
+        alert("Message Sent Successfully!");
+      })
+      .catch(() => {
+        alert("Failed to send message");
+      });
   };
 
   const projects = [
     {
       title: "Sales CRM AI Chatbot",
       tech: "Python • OpenAI API • MongoDB • Flask • Streamlit",
-      desc: "AI-powered CRM chatbot for lead qualification and automated customer interaction.",
+      image: "/images/crm-ai.jpg",
+      desc: "AI-powered CRM chatbot with intelligent lead qualification, automated customer interaction, OpenAI integration, and MongoDB-based chat storage system.",
+      github: "https://github.com/rushi935993/Sales-CRM-AI-Chatbot",
     },
     {
       title: "Loan Prediction ML Model",
-      tech: "Python • XGBoost • Scikit-learn • Streamlit",
-      desc: "Real-time loan eligibility prediction system with feature engineering.",
+      tech: "Python • XGBoost • Streamlit • Scikit-learn",
+      image: "/images/loan-ml.jpg",
+      desc: "Machine Learning-based loan eligibility prediction system using feature engineering, preprocessing pipelines, and real-time prediction dashboard.",
+      github:
+        "https://github.com/rushi935993/Loan-Predictor-Machine-Learning-Model",
     },
     {
-      title: "Vehicle Monitoring & License Plate Recognition",
-      tech: "YOLOv8 • OCR • FastAPI • OpenCV • MySQL",
-      desc: "AI surveillance system for vehicle detection and OCR-based plate recognition.",
+      title: "Vehicle Monitoring System",
+      tech: "YOLOv8 • OCR • FastAPI • OpenCV",
+      image: "/images/vehicle-ai.jpg",
+      desc: "AI-powered intelligent vehicle entry monitoring and license plate recognition system using YOLOv8, OCR, FastAPI backend, and OpenCV.",
+      github:
+        "https://github.com/rushi935993/vehicle_entry_monitoring_system",
+    },
+  ];
+
+  const certifications = [
+    {
+      title:
+        "Mastery in Data Science and Data Analytics with AI – NSDC And ItVedant Education 2025",
+      link:
+        "https://drive.google.com/file/d/14AhanCTNcQ9cBPIw4WoDxdr5rVWbIOo1/view",
+    },
+    {
+      title:
+        "Machine Learning with Python – IBM 2025",
+      link:
+        "https://drive.google.com/file/d/1NWTakA3MD6PXj3MKWsSnnp1H3LzjuF_V/view",
+    },
+    {
+      title:
+        "Data Science and Data Analytics with Python – IBM 2025",
+      link:
+        "https://drive.google.com/file/d/1Hr1UcEgGrwkmj-gCrAqTOqgkJVDuhpnG/view",
+    },
+    {
+      title:
+        "Amazon Web Services (AWS) – ItVedant Education 2025",
+      link:
+        "https://drive.google.com/file/d/1nO_aac4PYystCW1V99eR-7tEt1LfEpNg/view",
+    },
+    {
+      title:
+        "Fundamentals of DevOps – ItVedant Education 2025",
+      link:
+        "https://drive.google.com/file/d/1COd7kK8uc7q_FbeaDZbMPeVYf2PDtu4F/view",
     },
   ];
 
   return (
-    <div className="bg-black text-white min-h-screen overflow-x-hidden">
+    <div className="bg-black text-white overflow-x-hidden">
       <style jsx global>{`
         html {
           scroll-behavior: smooth;
         }
 
         body {
-          background: #050816;
-        }
-
-        .gradient-text {
-          background: linear-gradient(90deg, #00f5ff, #8b5cf6);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          background: #050505;
+          font-family: sans-serif;
         }
 
         .glass {
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(12px);
+          background: rgba(255, 255, 255, 0.04);
+          backdrop-filter: blur(10px);
           border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .glow {
-          box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
-        }
-
-        .card-hover:hover {
-          transform: translateY(-8px);
-          transition: 0.4s ease;
-        }
-
-        .typing {
-          overflow: hidden;
-          white-space: nowrap;
-          border-right: 3px solid cyan;
-          width: 0;
-          animation: typing 5s steps(60, end) infinite alternate;
-        }
-
-        @keyframes typing {
-          from {
-            width: 0;
-          }
-          to {
-            width: 100%;
-          }
+        .gradient {
+          background: linear-gradient(90deg, #ff3c3c, #ff6b6b);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
       `}</style>
 
       {/* HERO */}
-      <section className="min-h-screen flex items-center justify-center px-6 py-20">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="uppercase tracking-[4px] text-cyan-400 mb-4">
-              Future AI Engineer
+      <section className="min-h-screen flex items-center px-6 py-20">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <p className="text-red-500 uppercase tracking-[5px] mb-5">
+              AI ENGINEER
             </p>
 
-            <h1 className="text-5xl md:text-7xl font-black mb-6">
-              Rushikesh{" "}
-              <span className="gradient-text">Pravin Patil</span>
+            <h1 className="text-5xl md:text-7xl font-black leading-tight mb-8">
+              Hello, I'm <br />
+              <span className="gradient">
+                Rushikesh Patil
+              </span>
             </h1>
 
-            <div className="h-12 mb-6 overflow-hidden">
-              <h2 className="typing text-xl md:text-2xl text-purple-300 font-semibold">
-                AI & Data Science Engineer | Generative AI Enthusiast |
-                ML Developer
-              </h2>
-            </div>
-
-            <p className="text-gray-300 text-lg leading-relaxed mb-8">
-              Artificial Intelligence & Data Science student at SPPU
-              with expertise in AI/ML, Data Science, Computer Vision,
-              and Generative AI technologies.
+            <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl">
+              Final-year Artificial Intelligence and Data Science undergraduate with strong foundation in software engineering, machine
+              learning, and data-driven systems. Experienced in building AI-powered applications, APIs, and analytics solutions using
+              Python and modern frameworks. Familiar with Generative AI tools, prompt engineering, cloud platforms, DevOps
+              fundamentals, and Agile workflows. Passionate about building scalable AI-augmented software systems and seeking a
+              Trainee Software Engineer role to contribute to innovative product development
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-8">
+            <div className="flex gap-5 flex-wrap">
               <a
                 href="#projects"
-                className="px-6 py-3 rounded-2xl bg-cyan-500 text-black font-bold hover:scale-105 transition"
+                className="bg-red-500 hover:bg-red-600 transition px-7 py-3 rounded-xl font-semibold"
               >
                 View Projects
               </a>
 
               <a
                 href="/resume.pdf"
-                className="px-6 py-3 rounded-2xl border border-purple-500 hover:bg-purple-500/20 transition"
+                className="border border-red-500 px-7 py-3 rounded-xl hover:bg-red-500/20 transition"
               >
-                Download Resume
-              </a>
-
-              <a
-                href="#contact"
-                className="px-6 py-3 rounded-2xl glass hover:border-cyan-400 transition"
-              >
-                Contact Me
+                Download CV
               </a>
             </div>
 
-            <div className="flex gap-6">
+            <div className="flex gap-5 mt-10 text-2xl">
               <a
                 href="https://github.com/rushi935993"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-cyan-400 transition"
               >
-                GitHub
+                <FaGithub className="hover:text-red-500 transition" />
               </a>
 
               <a
                 href="https://www.linkedin.com/in/rushikesh-pravin-patil/"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-purple-400 transition"
               >
-                LinkedIn
+                <FaLinkedin className="hover:text-red-500 transition" />
               </a>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex justify-center">
-            <div className="glass rounded-[40px] p-4 glow w-[320px] h-[420px] overflow-hidden">
-              <img
-                src="/profile.jpg"
-                alt="profile"
-                className="w-full h-full object-cover rounded-[30px]"
-              />
-            </div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="relative flex justify-center"
+          >
+            <div className="absolute w-80 h-80 bg-red-500 rounded-full blur-[120px] opacity-30"></div>
+
+            <img
+              src="/profile.jpg"
+              alt="profile"
+              className="relative z-10 w-[380px] h-[480px] object-cover rounded-[40px] border border-white/10"
+            />
+          </motion.div>
         </div>
       </section>
 
-      {/* SKILLS */}
-      <section className="py-24 px-6 bg-[#070b1a]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold gradient-text">
-              Skills & Expertise
+      {/* ABOUT */}
+      <section className="py-28 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+          <motion.img
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            src="/profile.jpg"
+            className="rounded-[35px]"
+          />
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+          >
+            <p className="text-red-500 uppercase tracking-[4px] mb-4">
+              About Me
+            </p>
+
+            <h2 className="text-5xl font-bold mb-8">
+              AI Engineer & <br />
+              Generative AI Developer
+            </h2>
+
+            <p className="text-gray-400 leading-relaxed text-lg mb-8">
+              Artificial Intelligence & Data Science student at
+              Savitribai Phule Pune University with expertise in
+              Machine Learning, NLP, Computer Vision, LangChain,
+              LLMs, AI Agents, and Data Analytics.
+            </p>
+
+            <div className="grid grid-cols-2 gap-6">
+              <div className="glass p-6 rounded-2xl">
+                <h3 className="text-4xl font-bold text-red-500">
+                  8.85
+                </h3>
+                <p className="text-gray-400 mt-2">
+                  CGPA
+                </p>
+              </div>
+
+              <div className="glass p-6 rounded-2xl">
+                <h3 className="text-4xl font-bold text-red-500">
+                  15+
+                </h3>
+                <p className="text-gray-400 mt-2">
+                  Technical Skills
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* EXPERIENCE */}
+      <section className="py-28 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-16">
+            <p className="text-red-500 uppercase tracking-[4px] mb-4">
+              Experience
+            </p>
+
+            <h2 className="text-5xl font-bold">
+              Work Experience
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {Object.entries(skills).map(([category, items]) => (
-              <div
-                key={category}
-                className="glass rounded-3xl p-6 glow card-hover"
-              >
-                <h3 className="text-2xl font-bold mb-5 text-cyan-400">
-                  {category}
-                </h3>
+          <div className="glass rounded-[30px] p-10">
+            <p className="text-red-500 mb-3">
+              Sept 2025 – Dec 2025
+            </p>
 
-                <div className="flex flex-wrap gap-3">
-                  {items.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-4 py-2 rounded-full bg-white/10 border border-cyan-400/30 text-sm"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+            <h3 className="text-3xl font-bold mb-3">
+              Data Analyst Intern
+            </h3>
+
+            <p className="text-gray-400 mb-6">
+              Inorbvict Healthcare Pvt. Ltd., Pune
+            </p>
+
+            <ul className="space-y-4 text-gray-300">
+              <li>
+                • Built interactive BI dashboards using Zoho Analytics
+              </li>
+              <li>
+                • Created employee productivity dashboards
+              </li>
+              <li>
+                • Developed Jira sprint tracking dashboards
+              </li>
+              <li>
+                • Built Git analytics dashboards for monitoring
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -245,100 +296,146 @@ export default function Portfolio() {
       {/* PROJECTS */}
       <section
         id="projects"
-        className="py-24 px-6 max-w-7xl mx-auto"
+        className="py-28 px-6"
       >
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold gradient-text">
-            Projects
-          </h2>
+        <div className="max-w-7xl mx-auto">
+
+          <div className="mb-20 text-center">
+            <p className="text-red-500 uppercase tracking-[4px] mb-4">
+              Portfolio
+            </p>
+
+            <h2 className="text-5xl font-bold">
+              Featured Projects
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ y: -10 }}
+                className="glass rounded-[30px] overflow-hidden"
+              >
+                <div className="overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-64 w-full object-cover hover:scale-110 transition duration-700"
+                  />
+                </div>
+
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold mb-4">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-gray-400 text-sm mb-4">
+                    {project.tech}
+                  </p>
+
+                  <p className="text-gray-300 leading-relaxed mb-6">
+                    {project.desc}
+                  </p>
+
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    className="inline-block border border-red-500 px-6 py-3 rounded-xl hover:bg-red-500/20 transition"
+                  >
+                    View GitHub
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <div
-              key={project.title}
-              className="glass rounded-3xl p-8 glow card-hover"
-            >
-              <div className="h-48 rounded-2xl mb-6 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center text-2xl font-bold text-center p-4">
-                {project.title}
-              </div>
+      {/* CERTIFICATIONS */}
+      <section className="py-28 px-6">
+        <div className="max-w-7xl mx-auto">
 
-              <p className="text-cyan-300 text-sm mb-4">
-                {project.tech}
-              </p>
+          <div className="mb-20 text-center">
+            <p className="text-red-500 uppercase tracking-[4px] mb-4">
+              Certifications
+            </p>
 
-              <p className="text-gray-300 leading-relaxed mb-6">
-                {project.desc}
-              </p>
+            <h2 className="text-5xl font-bold">
+              Professional Certifications
+            </h2>
+          </div>
 
-              <div className="flex gap-4">
-                <button className="px-4 py-2 rounded-xl bg-cyan-500 text-black font-semibold">
-                  Live Demo
-                </button>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {certifications.map((cert, index) => (
+              <motion.div
+                key={index}
+                whileHover={{
+                  y: -10,
+                  scale: 1.02,
+                }}
+                className="glass p-8 rounded-[30px] border border-white/10 hover:border-red-500/40 transition duration-500 relative overflow-hidden group"
+              >
 
-                <button className="px-4 py-2 rounded-xl border border-purple-500">
-                  GitHub
-                </button>
-              </div>
-            </div>
-          ))}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 blur-3xl rounded-full"></div>
+
+                <div className="relative z-10">
+
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="text-5xl">
+                      🏆
+                    </div>
+
+                    <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 text-xl group-hover:bg-red-500 group-hover:text-white transition">
+                      ↗
+                    </div>
+                  </div>
+
+                  <h3 className="text-xl font-semibold leading-relaxed mb-8 min-h-[140px]">
+                    {cert.title}
+                  </h3>
+
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 border border-red-500 px-5 py-3 rounded-xl hover:bg-red-500/20 transition"
+                  >
+                    View Certificate
+                  </a>
+
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CONTACT */}
-      <section
-        id="contact"
-        className="py-24 px-6 max-w-6xl mx-auto"
-      >
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold gradient-text">
-            Contact Me
-          </h2>
-        </div>
+      <section className="py-28 px-6">
+        <div className="max-w-6xl mx-auto glass rounded-[40px] p-10 md:p-16">
 
-        <div className="grid md:grid-cols-2 gap-10">
-          <div className="glass rounded-3xl p-8 glow">
-            <h3 className="text-3xl font-bold mb-8 text-cyan-400">
-              Get In Touch
-            </h3>
+          <div className="text-center mb-14">
+            <p className="text-red-500 uppercase tracking-[4px] mb-4">
+              Contact
+            </p>
 
-            <div className="space-y-5 text-gray-300">
-              <p>📧 rushipatil935993@gmail.com</p>
-              <p>📞 +91 93599 30147</p>
-
-              <p>
-                🔗{" "}
-                <a
-                  href="https://github.com/rushi935993"
-                  className="text-cyan-400"
-                >
-                  github.com/rushi935993
-                </a>
-              </p>
-
-              <p>
-                💼{" "}
-                <a
-                  href="https://www.linkedin.com/in/rushikesh-pravin-patil/"
-                  className="text-purple-400"
-                >
-                  linkedin.com/in/rushikesh-pravin-patil
-                </a>
-              </p>
-            </div>
+            <h2 className="text-5xl font-bold">
+              Let's Work Together
+            </h2>
           </div>
 
           <form
             ref={form}
             onSubmit={sendEmail}
-            className="glass rounded-3xl p-8 glow space-y-6"
+            className="space-y-6"
           >
             <input
               type="text"
               name="from_name"
               placeholder="Your Name"
               required
-              className="w-full p-4 rounded-2xl bg-black/30 border border-cyan-500/20 outline-none"
+              className="w-full bg-black/40 border border-white/10 p-5 rounded-2xl outline-none"
             />
 
             <input
@@ -346,7 +443,7 @@ export default function Portfolio() {
               name="from_email"
               placeholder="Your Email"
               required
-              className="w-full p-4 rounded-2xl bg-black/30 border border-cyan-500/20 outline-none"
+              className="w-full bg-black/40 border border-white/10 p-5 rounded-2xl outline-none"
             />
 
             <textarea
@@ -354,12 +451,12 @@ export default function Portfolio() {
               rows={5}
               placeholder="Your Message"
               required
-              className="w-full p-4 rounded-2xl bg-black/30 border border-cyan-500/20 outline-none"
+              className="w-full bg-black/40 border border-white/10 p-5 rounded-2xl outline-none"
             ></textarea>
 
             <button
               type="submit"
-              className="w-full py-4 rounded-2xl bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-bold hover:scale-[1.02] transition"
+              className="bg-red-500 hover:bg-red-600 transition px-8 py-4 rounded-xl font-semibold"
             >
               Send Message
             </button>
@@ -368,34 +465,30 @@ export default function Portfolio() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-white/10 py-10 text-center text-gray-400">
-        <h3 className="text-2xl font-bold gradient-text mb-2">
+      <footer className="border-t border-white/10 py-10 text-center text-gray-500">
+        <h3 className="text-2xl font-bold text-white mb-4">
           Rushikesh Pravin Patil
         </h3>
 
-        <p className="mb-4">Built with AI & Innovation</p>
-
-        <div className="flex justify-center gap-6 mb-4">
+        <div className="flex justify-center gap-6 mb-5 text-2xl">
           <a
             href="https://github.com/rushi935993"
             target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-cyan-400 transition"
           >
-            GitHub
+            <FaGithub className="hover:text-red-500 transition" />
           </a>
 
           <a
             href="https://www.linkedin.com/in/rushikesh-pravin-patil/"
             target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-purple-400 transition"
           >
-            LinkedIn
+            <FaLinkedin className="hover:text-red-500 transition" />
           </a>
         </div>
 
-        <p>© 2026 Rushikesh Pravin Patil. All rights reserved.</p>
+        <p>
+          Built with AI & Innovation
+        </p>
       </footer>
     </div>
   );
