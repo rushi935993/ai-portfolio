@@ -362,7 +362,7 @@ export default function Portfolio() {
             />
 
             <textarea
-              rows="5"
+              rows={5}
               placeholder="Your Message"
               className="w-full p-4 rounded-2xl bg-black/30 border border-cyan-500/20 outline-none"
             ></textarea>
