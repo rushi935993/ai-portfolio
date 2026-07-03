@@ -41,6 +41,16 @@ export default function Portfolio() {
       desc: "AI-powered CRM chatbot with intelligent lead qualification, automated customer interaction, OpenAI integration, and MongoDB-based chat storage system.",
       github: "https://github.com/rushi935993/Sales-CRM-AI-Chatbot",
     },
+
+    {
+      title: "AI Powered CT Scan Analysi",
+      tech: "Python • TensorFlow • CNN • OpenCV • FastAPI • React.js • JavaScript • REST API ",
+      image: "/images/ai-ctscananalysis.jpg",
+      desc: "Developed an end-to-end AI-powered CT Scan Analysis System using Python, TensorFlow, FastAPI, and React.js.",
+      github:
+        "https://github.com/rushi935993/AI-Powered-CT-Scan-Analysis-Using-Python",
+    },
+
     {
       title: "Loan Prediction ML Model",
       tech: "Python • XGBoost • Streamlit • Scikit-learn",
