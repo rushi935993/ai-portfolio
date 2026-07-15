@@ -34,6 +34,15 @@ export default function Portfolio() {
   };
 
   const projects = [
+
+    {
+      title: "AI-First CRM HCP Platform",
+      tech: "Next.js • TypeScript • LangGraph • LangChain • FastAPI • Groq LLM • Tailwind CSS",
+      image: "/images/crm-hcp.jpg",
+      desc: "Developed an AI-powered CRM platform for Healthcare Professionals (HCPs) featuring intelligent interaction logging, automated conversation analysis, sentiment detection, compliance validation, follow-up recommendations, entity extraction, and priority classification using LangGraph workflows and Large Language Models.",
+      github: "https://github.com/rushi935993/ai-first-crm-hcp",
+    },
+
     {
       title: "Sales CRM AI Chatbot",
       tech: "Python • OpenAI API • MongoDB • Flask • Streamlit",
@@ -128,7 +137,7 @@ export default function Portfolio() {
             </h1>
 
             <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl">
-              Final-year Artificial Intelligence and Data Science undergraduate
+              Artificial Intelligence and Data Science Graduate
               with strong foundation in software engineering, machine learning,
               and data-driven systems.
             </p>
@@ -222,7 +231,7 @@ export default function Portfolio() {
                 </h3>
 
                 <p className="text-gray-400 leading-relaxed mb-6">
-                  Artificial Intelligence & Data Science student at
+                  Artificial Intelligence & Data Science Graduate From
                   Savitribai Phule Pune University with expertise in
                   Machine Learning, Data Analytics, Generative AI,
                   LangChain, LLMs, Prompt Engineering, and AI Agents.
@@ -267,7 +276,7 @@ export default function Portfolio() {
 
                 <div className="glass p-6 rounded-2xl">
                   <h3 className="text-3xl font-bold text-red-500">
-                    8.85
+                    7.69
                   </h3>
 
                   <p className="text-gray-400 mt-2">
