@@ -401,7 +401,7 @@ export default function Portfolio() {
               </p>
 
               <h3 className="text-4xl font-bold mb-4">
-                Data Analyst Intern
+                Data Science Intern
               </h3>
 
               <p className="text-gray-400 mb-8">
